@@ -9,7 +9,7 @@ $(document).ready(function () {
 				email: true
 			},
 			password: {
-				minLength: 6,
+				minlength: 6,
 				required: true
 			},
 			confirmation: {
@@ -17,13 +17,18 @@ $(document).ready(function () {
 			}
 		},
 		highlight: function(element) {
-			$(element).closest('.form-group').addClass('has-error');
+			fg = $(element).closest('.form-group');
+			fg.removeClass('has-success');
+			fg.addClass('has-error');
 		},
 		unhighlight: function(element) {
-			$(element).closest('.form-group').removeClass('has-error');
+			fg = $(element).closest('.form-group');
+			fg.removeClass('has-error');
 		},
 		success: function(element) {
-			$(element).closest('.form-group').addClass('has-success');
+			fg = $(element).closest('.form-group');
+			fg.removeClass('has-error');
+			fg.addClass('has-success');
 		},
 		errorElement: 'span',
 		errorClass: 'help-block',
