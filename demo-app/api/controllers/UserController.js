@@ -30,7 +30,7 @@ module.exports = {
 				}				
 				return res.redirect('/user/new');
 			}
-			res.redirect('/user/show' + user.id);
+			res.redirect('/user/show/' + user.id);
 			req.session.flash = {};
 		});
 	},
@@ -43,6 +43,24 @@ module.exports = {
 			res.view({
 				user: user
 			});
+		});
+	},
+
+	'index': function(req, res, next) {
+		User.find(function foundUsers (err, users){
+			if (err) return next(err);
+			res.view({
+				users: users
+			});
+		});
+	},
+
+	'update': function(req, res, next) {
+		User.update(req.param('id'), req.params.all(), function userUpdated(err) {
+			if (err) {
+				return res.redirect('/user/show/' + req.param('id'));
+			}
+			res.redirect('/user/show/' + req.param('id'));
 		});
 	},
 
