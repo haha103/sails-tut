@@ -5,8 +5,8 @@ x EP3  - http://irlnathan.github.io/sailscasts/blog/2013/08/23/building-a-sails-
 EP3U - http://irlnathan.github.io/sailscasts/blog/2013/08/25/building-a-sails-application-ep3-update-creating-a-user-model-and-controller/
 x EP4  - http://irlnathan.github.io/sailscasts/blog/2013/08/26/building-a-sails-application-ep4-creating-a-user-account/
 x EP5  - http://irlnathan.github.io/sailscasts/blog/2013/08/27/building-a-sails-application-ep4-handling-validation-errors-with-a-flash-message/
-EP6  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep5-creating-a-policy-and-adding-client-side-validation/
-EP7  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep7-adding-a-show-action-a-dot-k-a-a-profile-page/
+x EP6  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep5-creating-a-policy-and-adding-client-side-validation/
+x EP7  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep7-adding-a-show-action-a-dot-k-a-a-profile-page/
 EP8  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep8-building-a-user-list/
 EP9  - http://irlnathan.github.io/sailscasts/blog/2013/08/29/building-a-sails-application-ep9-deleting-a-user-account/
 EP10 - http://irlnathan.github.io/sailscasts/blog/2013/08/30/building-a-sails-application-ep10-changing-databases-to-mongodb-with-sails-adapters/

@@ -1,8 +1,15 @@
 <div class='container'>
 	<form role='form' action="/user/create" method="POST" class="haha-form-signin">
-		<div class="panel panel-default haha-signup-panel haha-panel-md">
+		<div class="panel panel-default haha-show-user-panel haha-panel-md">
 			<div class="panel-heading">
-				<h4>Create an account</h4>
+				<div class='row'>
+					<div class='col-md-9'>
+						<h4>User Details</h4>
+					</div>
+					<div class='col-md-3' id='edit-btn-container'>
+						<a class='btn btn-primary btn-block' id='edit'>Edit</a>
+					</div>
+				</div>
 			</div>
 			<div class="panel-body">
 				<% if (flash && flash.err) { %>
@@ -14,27 +21,27 @@
 				<% } %>
 				<div class='form-group'>
 					<label class='control-label' for="name">Name</label>
-					<input type='text' class='form-control' name='name' placeholder='your name'></input>
+					<input type='text' class='form-control' name='name' placeholder='<%= user.name %>' disabled></input>
 				</div>
 				<div class='form-group'>
 					<label class='control-label' for="title">Title</label>
-					<input type='text' class='form-control' name='title' placeholder='your title'></input>
+					<input type='text' class='form-control' name='title' placeholder='<%= user.title %>' disabled></input>
 				</div>
 				<div class='form-group'>
 					<label class='control-label' for="email">Email Address</label>
-					<input type='text' class='form-control' name='email' placeholder='your email'></input>
+					<input type='text' class='form-control' name='email' placeholder='<%= user.email %>' disabled></input>
 				</div>
-				<div class='form-group'>
+				<div class='form-group hidden'>
 					<label class='control-label' for="password">Password</label>
 					<input type='password' class='form-control' name='password' id='password' placeholder='your password'></input>
 				</div>
-				<div class='form-group'>
+				<div class='form-group hidden'>
 					<label class='control-label' for="confirmation">Password Confirmation</label>
 					<input type='password' class='form-control' name='confirmation' placeholder='your password confirmation'></input>
 				</div>
 			</div>
-			<div class="panel-footer">
-				<button type='submit' class='btn btn-primary btn-block'>Create</button>
+			<div class="panel-footer hidden">
+				<button type='submit' id='update' class='btn btn-primary btn-block'>Update</button>
 			</div>
 		</div>
 		<input class='hidden' name='_csrf' value='<%= _csrf %>' />

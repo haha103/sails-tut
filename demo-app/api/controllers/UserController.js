@@ -30,8 +30,19 @@ module.exports = {
 				}				
 				return res.redirect('/user/new');
 			}
-			res.json(user);
+			res.redirect('/user/show' + user.id);
 			req.session.flash = {};
+		});
+	},
+
+
+	'show': function (req, res, next) {
+		User.findOne(req.params['id'], function foundUser (err, user) {
+			if (err) return next(err);
+			if (!user) return next();
+			res.view({
+				user: user
+			});
 		});
 	},
 
@@ -42,4 +53,5 @@ module.exports = {
   _config: {}
 
   
+
 };
