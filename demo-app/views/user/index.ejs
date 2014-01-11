@@ -24,7 +24,12 @@
 						<td><%= user.title %></td>
 						<td><%= user.email %></td>
 						<td style='width:90px;'><a href='/user/show/<%= user.id %>' class='btn btn-sm btn-primary btn-block'>Show/Edit</a></td>
-						<td style='width:90px;'><a href='/user/destroy/<%= user.id %>' class='btn btn-sm btn-danger btn-block'>Delete</a></td>
+            <td style='width:90px;'>
+              <form action="/user/destroy/<%= user.id %>" method="POST">
+                <input type="hidden" name="_method" value="delete"/>
+                <input type="submit" class="btn btn-sm btn-danger btn-block" value="Delete"/>
+                <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+              </form>
 					</tr>
 					<% }) %>
 				</tbody>
