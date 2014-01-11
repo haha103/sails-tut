@@ -8,8 +8,8 @@ x EP5  - http://irlnathan.github.io/sailscasts/blog/2013/08/27/building-a-sails-
 x EP6  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep5-creating-a-policy-and-adding-client-side-validation/
 x EP7  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep7-adding-a-show-action-a-dot-k-a-a-profile-page/
 x EP8  - http://irlnathan.github.io/sailscasts/blog/2013/08/28/building-a-sails-application-ep8-building-a-user-list/
-EP9  - http://irlnathan.github.io/sailscasts/blog/2013/08/29/building-a-sails-application-ep9-deleting-a-user-account/
-EP10 - http://irlnathan.github.io/sailscasts/blog/2013/08/30/building-a-sails-application-ep10-changing-databases-to-mongodb-with-sails-adapters/
+x EP9  - http://irlnathan.github.io/sailscasts/blog/2013/08/29/building-a-sails-application-ep9-deleting-a-user-account/
+x EP10 - http://irlnathan.github.io/sailscasts/blog/2013/08/30/building-a-sails-application-ep10-changing-databases-to-mongodb-with-sails-adapters/
 EP11 - http://irlnathan.github.io/sailscasts/blog/2013/08/30/building-a-sails-application-ep11-encrypting-passwords-with-bcrypt/
 EP12 - http://irlnathan.github.io/sailscasts/blog/2013/08/31/building-a-sails-application-ep12-starting-a-project-in-the-middle-using-git-clone/
 EP13 - http://irlnathan.github.io/sailscasts/blog/2013/09/01/building-a-sails-application-ep13-sign-in-page/
