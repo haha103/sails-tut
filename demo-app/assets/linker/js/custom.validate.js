@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('.haha-form-signin').validate({
+	$('.haha-form-signup').validate({
 		rules: {
 			name: {
 				required: true
