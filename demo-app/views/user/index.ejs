@@ -12,6 +12,7 @@
 						<th>Name</th>
 						<th>Title</th>
 						<th>Email</th>
+						<th>Admin</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -23,7 +24,18 @@
 						<td><%= user.name %></td>
 						<td><%= user.title %></td>
 						<td><%= user.email %></td>
-						<td style='width:90px;'><a href='/user/show/<%= user.id %>' class='btn btn-sm btn-primary btn-block'>Show/Edit</a></td>
+            <td>
+              <% if (user.admin) { %>
+              Yes
+              <% } else { %>
+              No
+              <% } %>
+            </td>
+            <% 
+              var btn_txt = "Show"; 
+              if (session.User.admin) { btn_txt += "/Edit"; } 
+            %>
+            <td style='width:90px;'><a href='/user/show/<%= user.id %>' class='btn btn-sm btn-primary btn-block'><%= btn_txt %></a></td>
             <td style='width:90px;'>
               <form action="/user/destroy/<%= user.id %>" method="POST">
                 <input type="hidden" name="_method" value="delete"/>

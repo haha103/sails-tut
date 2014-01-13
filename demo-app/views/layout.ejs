@@ -32,8 +32,10 @@
                 <%= session.User.name %>
               </a>
             </li>
-            <li><a href="/user">User Administration</a></li>
-            <li><a href="#">Placeholder2</a></li>
+              <% if (session.User.admin) { %>
+              <li><a href="/user">User Administration</a></li>
+              <li><a href="#">Placeholder2</a></li>
+              <% } %>
             <% } %>
           </ul>
           <div class="navbar-right">
