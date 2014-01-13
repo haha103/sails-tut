@@ -28,6 +28,11 @@ module.exports = {
   		unique: true
   	},
 
+    admin: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+
     encryptedPassword: {
     	type: 'string'
     }/*,
@@ -43,7 +48,19 @@ module.exports = {
     */
   },
 
+  beforeValidation: function(values, next) {
+    // admin
+    if (values.admin && values.admin == 'on') {
+      values.admin = true;
+    } else {
+      values.admin = false;
+    }
+    //console.log(values);
+    next();
+  },
+
   beforeCreate: function(values, next) {
+    // encrypt password
     if (!values.password || values.password != values.confirmation) {
       return next({err: ["Password does not match password confirmation"]});
     }
