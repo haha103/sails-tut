@@ -59,7 +59,16 @@ module.exports = {
 	},
 
 	'update': function(req, res, next) {
-		User.update(req.param('id'), req.params.all(), function userUpdated(err) {
+    var userObj = {
+      name: req.param('name'),
+      title: req.param('title'),
+      email: req.param('email'),
+      password: req.param('password')
+    };
+    if (req.session.User.admin) {
+      userObj.admin = req.param('admin');
+    }
+		User.update(req.param('id'), userObj, function userUpdated(err) {
 			if (err) {
 				return res.redirect('/user/show/' + req.param('id'));
 			}
