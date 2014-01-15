@@ -62,6 +62,9 @@ module.exports = {
         user.online = true;
         user.save(function(err, user) {
           if (err) return next(err);
+
+          User.publishUpdate(user.id, { loggedIn: true, id: user.id });
+
           if (user.admin) {
             res.redirect('/user');
             return;
@@ -73,9 +76,13 @@ module.exports = {
   },
 
   'destroy': function(req, res, next) {
-    User.update(req.session.User.id, { online: false }, function(err) {
-      req.session.destroy();
-      res.redirect('/session/new');
+    User.findOne(req.session.User.id, function foundUser(err, user) {
+      if (err) return next(err);
+      User.update(user.id, { online: false }, function(err) {
+        User.publishUpdate(user.id, { loggedIn: false, id: user.id });
+        req.session.destroy();
+        res.redirect('/session/new');
+      });
     });
   },
 

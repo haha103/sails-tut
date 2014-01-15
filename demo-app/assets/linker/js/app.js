@@ -26,10 +26,16 @@
       // to run when a new message arrives from the Sails.js
       // server.
       ///////////////////////////////////////////////////////////
-      log('New comet message received :: ', message);
+      log('Here\'s the message: ', message);
       //////////////////////////////////////////////////////
 
+      if (message.model === "user") {
+        var userId = message.id;
+        updateUserInDom(userId, message);
+      }
     });
+
+    socket.get('/user/subscribe');
 
 
     ///////////////////////////////////////////////////////////
@@ -69,3 +75,51 @@
   window.io
 
 );
+
+function updateUserInDom(userId, message) {
+  var page = document.location.pathname;
+  page = page.replace(/(\/)$/, '');
+  switch(page) {
+    case '/user':
+      // this is a message coming from publishUpdate
+      if (message.verb === 'update') {
+        UserIndexPage.updateUser(userId, message);
+      }
+      if (message.verb === 'create') {
+        UserIndexPage.addUser(message);
+      }
+      if (message.verb === 'destroy') {
+        UserIndexPage.destroyUser(userId);
+      }
+      break;
+  }
+}
+
+var UserIndexPage = {
+  
+  updateUser: function(id, message) {
+    var elem = $('tr[data-id="' + id + '"] td span').first();
+    if (message.data.loggedIn) {
+      elem.removeClass('glyphicon-minus-sign');
+      elem.addClass('glyphicon-plus-sign');
+    } else {
+      elem.removeClass('glyphicon-plus-sign');
+      elem.addClass('glyphicon-minus-sign');
+    }
+  },
+
+  addUser: function(message) {
+    var obj = {
+      user: message.data,
+      _csrf: window.overlord.csrf || '',
+      sessionAdmin: window.overlord.sessionAdmin
+    };
+
+    $('tr:last').after(JST['assets/linker/templates/addUser.ejs'](obj));
+  },
+
+  destroyUser: function(id) {
+    $('tr[data-id"' + id + '"]').remove();
+  }
+
+};

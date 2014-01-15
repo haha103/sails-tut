@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="/linker/styles/bootstrap.css">
     <link rel="stylesheet" href="/linker/styles/custom.css">
     <!--STYLES END-->
+    <script type="text/javascript">
+      window.overlord = { 
+        csrf: "<%= _csrf %>",
+        sessionAdmin: <%= session.User ? session.User.admin : false %>
+      };
+    </script>
   </head>
 
   <body>
@@ -95,7 +101,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+    <script type="text/javascript" src="/jst.js"></script>
     <!--TEMPLATES END-->
 
 
@@ -129,6 +135,7 @@
     <script src="/linker/js/jquery.validate.min.js"></script>
     <script src="/linker/js/bootstrap.js"></script>
     <script src="/linker/js/custom.validate.js"></script>
+    <script src="/linker/js/underscore.js"></script>
     <script src="/linker/js/user.show.js"></script>
     <!--SCRIPTS END-->
   </body>

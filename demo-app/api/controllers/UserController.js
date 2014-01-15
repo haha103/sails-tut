@@ -36,6 +36,7 @@ module.exports = {
       user.online = true;
       user.save(function(err, user) {
         if (err) return next(err);
+        User.publishCreate(user);
         res.redirect('/user/show/' + user.id);
       });
       req.session.flash = {};
@@ -86,8 +87,18 @@ module.exports = {
       if (!user) return next('User does not exist.');
       User.destroy(req.param('id'), function userDestroyed(err) {
         if (err) return next(err);
+        User.publishDestroy(user.id);
       });
       res.redirect('/user');
+    });
+  },
+
+  'subscribe': function(req, res) {
+    User.find(function foundUsers(err, users) {
+      if (err) return next(err);
+      User.subscribe(req.socket);
+      User.subscribe(req.socket, users);
+      res.send(200);
     });
   },
 
