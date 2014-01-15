@@ -12,7 +12,7 @@
 						<th>Name</th>
 						<th>Title</th>
 						<th>Email</th>
-						<th>Admin</th>
+						<th></th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -24,22 +24,30 @@
 						<td><%= user.name %></td>
 						<td><%= user.title %></td>
 						<td><%= user.email %></td>
-            <td>
+            <td style="width:50px;">
               <% if (user.admin) { %>
-              Yes
+              <span class="glyphicon glyphicon-tower"></span>
               <% } else { %>
-              No
+              <span class="glyphicon glyphicon-user"></span>
               <% } %>
             </td>
-            <% 
-              var btn_txt = "Show"; 
-              if (session.User.admin) { btn_txt += "/Edit"; } 
-            %>
-            <td style='width:90px;'><a href='/user/show/<%= user.id %>' class='btn btn-sm btn-primary btn-block'><%= btn_txt %></a></td>
-            <td style='width:90px;'>
+            <td style='width:50px;'>
+              <a href='/user/show/<%= user.id %>' class='btn btn-sm btn-primary btn-block'>
+                <% 
+                var show_icon = "glyphicon-info-sign";
+                if (session.User.admin) {
+                  show_icon = "glyphicon-wrench";
+                }
+                %>
+                <span class="glyphicon <%= show_icon %>"></span>
+              </a>
+            </td>
+            <td style='width:50px;'>
               <form action="/user/destroy/<%= user.id %>" method="POST">
                 <input type="hidden" name="_method" value="delete"/>
-                <input type="submit" class="btn btn-sm btn-danger btn-block" value="Delete"/>
+                <button type="submit" class="btn btn-sm btn-danger btn-block">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
                 <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
               </form>
 					</tr>
