@@ -33,6 +33,11 @@ module.exports = {
       defaultsTo: false
     },
 
+    online: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+
     encryptedPassword: {
     	type: 'string'
     }/*,
@@ -52,8 +57,6 @@ module.exports = {
     // admin
     if (values.admin && values.admin == 'on') {
       values.admin = true;
-    } else {
-      values.admin = false;
     }
     //console.log(values);
     next();

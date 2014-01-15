@@ -59,18 +59,24 @@ module.exports = {
         } 
         req.session.authenticated = true;
         req.session.User = user;
-        if (user.admin) {
-          res.redirect('/user');
-          return;
-        }
-        res.redirect('/user/show/' + user.id);
+        user.online = true;
+        user.save(function(err, user) {
+          if (err) return next(err);
+          if (user.admin) {
+            res.redirect('/user');
+            return;
+          }
+          res.redirect('/user/show/' + user.id);
+        });
       });
     });
   },
 
   'destroy': function(req, res, next) {
-    req.session.destroy();
-    res.redirect('/session/new');
+    User.update(req.session.User.id, { online: false }, function(err) {
+      req.session.destroy();
+      res.redirect('/session/new');
+    });
   },
 
   /**

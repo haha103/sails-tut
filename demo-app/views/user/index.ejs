@@ -8,6 +8,7 @@
 			<table class='table'>
 				<thead>
 					<tr>
+						<th></th>
 						<th>ID</th>
 						<th>Name</th>
 						<th>Title</th>
@@ -20,6 +21,13 @@
 				<tbody>
 					<% _.each(users, function(user) { %>
 					<tr data-id='<%= user.id %>' data-model='user'>
+            <td style="width:50px;">
+              <% if (user.online) { %>
+              <span class="glyphicon glyphicon-plus-sign"></span>
+              <% } else { %>
+              <span class="glyphicon glyphicon-minus-sign"></span>
+              <% } %>
+            </td>
 						<td><%= user.id %></td>
 						<td><%= user.name %></td>
 						<td><%= user.title %></td>
