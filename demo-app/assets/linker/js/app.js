@@ -119,7 +119,8 @@ var UserIndexPage = {
   },
 
   destroyUser: function(id) {
-    $('tr[data-id"' + id + '"]').remove();
+    var elem = $('tr[data-id="' + id + '"]');
+    elem.remove();
   }
 
 };
