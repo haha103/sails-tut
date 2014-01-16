@@ -17,12 +17,12 @@ x EP14 - http://irlnathan.github.io/sailscasts/blog/2013/09/02/building-a-sails-
 x EP15 - http://irlnathan.github.io/sailscasts/blog/2013/09/02/building-a-sails-application-ep15-improving-user-authenticated-navigation/
 x EP16 -  http://irlnathan.github.io/sailscasts/blog/2013/09/04/building-a-sails-application-ep16-fixing-and-issue-with-policies-from-episode-14/
 x EP17 - http://irlnathan.github.io/sailscasts/blog/2013/09/05/building-a-sails-application-ep17-creating-a-distinction-between-admin-and-regular-users/
-EP17a - http://irlnathan.github.io/sailscasts/blog/2013/09/24/building-a-sails-application-ep17a-marshalling-request-parameters/
-EP18 - http://irlnathan.github.io/sailscasts/blog/2013/09/06/building-a-sails-application-ep18-understanding-web-sockets-and-socket-io-including-room-creation-and-management/
-EP19 - http://irlnathan.github.io/sailscasts/blog/2013/09/10/building-a-sails-application-ep19-create-the-necessary-ui-and-mechanics-for-sign-in-and-sign-out-in-preparation-for-using-web-sockets/
-EP20 - http://irlnathan.github.io/sailscasts/blog/2013/09/15/episode-20-adding-real-time-events-to-models-in-4-lines-of-code/
-EP21 - http://irlnathan.github.io/sailscasts/blog/2013/10/10/building-a-sails-application-ep21-integrating-socket-dot-io-and-sails-with-custom-controller-actions-using-real-time-model-events/
-EP22 - http://irlnathan.github.io/sailscasts/blog/2013/10/10/building-a-sails-application-ep22-manipulating-the-dom-based-upon-changes-via-real-time-model-events/
+x EP17a - http://irlnathan.github.io/sailscasts/blog/2013/09/24/building-a-sails-application-ep17a-marshalling-request-parameters/
+x EP18 - http://irlnathan.github.io/sailscasts/blog/2013/09/06/building-a-sails-application-ep18-understanding-web-sockets-and-socket-io-including-room-creation-and-management/
+x EP19 - http://irlnathan.github.io/sailscasts/blog/2013/09/10/building-a-sails-application-ep19-create-the-necessary-ui-and-mechanics-for-sign-in-and-sign-out-in-preparation-for-using-web-sockets/
+x EP20 - http://irlnathan.github.io/sailscasts/blog/2013/09/15/episode-20-adding-real-time-events-to-models-in-4-lines-of-code/
+x EP21 - http://irlnathan.github.io/sailscasts/blog/2013/10/10/building-a-sails-application-ep21-integrating-socket-dot-io-and-sails-with-custom-controller-actions-using-real-time-model-events/
+x EP22 - http://irlnathan.github.io/sailscasts/blog/2013/10/10/building-a-sails-application-ep22-manipulating-the-dom-based-upon-changes-via-real-time-model-events/
 EP23 - http://irlnathan.github.io/sailscasts/blog/2013/10/16/building-a-sails-application-ep23-adding-real-time-flash-messages-using-real-time-model-events/
 EP24 - http://irlnathan.github.io/sailscasts/blog/2013/10/21/building-a-sails-application-ep24-correcting-a-publishupdate-event-and-adding-a-policy-to-the-user-controllers-subscribe-action/
 EP25 - http://irlnathan.github.io/sailscasts/blog/2013/10/25/building-a-sails-application-ep25-what-is-commonjs-in-relation-to-node-what-does-it-do-how-do-i-use-it/
