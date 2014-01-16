@@ -83,16 +83,22 @@ module.exports = {
   'destroy': function(req, res, next) {
     User.findOne(req.session.User.id, function foundUser(err, user) {
       if (err) return next(err);
-      User.update(user.id, { online: false }, function(err) {
-        User.publishUpdate(user.id, { 
-          loggedIn: false, 
-          id: user.id,
-          name: user.name,
-          action: " has logged out."
+      if (user) {
+        User.update(user.id, { online: false }, function(err) {
+          User.publishUpdate(user.id, { 
+            loggedIn: false, 
+            id: user.id,
+            name: user.name,
+            action: " has logged out."
+          });
+          req.session.destroy();
+          res.redirect('/session/new');
         });
+      } else {
         req.session.destroy();
         res.redirect('/session/new');
-      });
+      }
+
     });
   },
 

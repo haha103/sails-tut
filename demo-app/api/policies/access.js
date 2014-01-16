@@ -1,6 +1,7 @@
 module.exports = function (req, res, ok) {
-  if (req.session.User.admin || 
-      req.session.User.id == req.param('id')) {
+  if (req.session.User && 
+      (req.session.User.admin || 
+       req.session.User.id == req.param('id'))) {
     return ok();
   } else {
     var err = [{

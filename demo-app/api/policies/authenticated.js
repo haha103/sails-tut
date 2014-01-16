@@ -1,14 +1,7 @@
 module.exports = function (req, res, ok) {
-  if (req.session.authenticated) {
+  if (req.session.User) {
     return ok();
   } else {
-    var err = [{
-      name: 'Login Required',
-      message: 'You must be signed in.'
-    }];
-
-    req.session.flash = { err: err };
-    res.redirect('/session/new');
-    return;
+    res.send(403);
   }
 };
