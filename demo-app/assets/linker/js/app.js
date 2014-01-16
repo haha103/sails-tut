@@ -32,6 +32,10 @@
       if (message.model === "user") {
         var userId = message.id;
         updateUserInDom(userId, message);
+
+        if (message.verb !== "destroy") {
+          displayFlashActivity(message);
+        }
       }
     });
 
@@ -75,6 +79,15 @@
   window.io
 
 );
+
+function displayFlashActivity(message) {
+  $(".navbar").after(
+      "<div class='alert alert-success'>" 
+      + message.data.name
+      + message.data.action
+      + "</div>");
+  $(".alert").fadeOut(5000);
+}
 
 function updateUserInDom(userId, message) {
   var page = document.location.pathname;

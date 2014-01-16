@@ -36,6 +36,7 @@ module.exports = {
       user.online = true;
       user.save(function(err, user) {
         if (err) return next(err);
+        user.action = " has been created.";
         User.publishCreate(user);
         res.redirect('/user/show/' + user.id);
       });
@@ -87,6 +88,10 @@ module.exports = {
       if (!user) return next('User does not exist.');
       User.destroy(req.param('id'), function userDestroyed(err) {
         if (err) return next(err);
+        User.publishUpdate(user.id, {
+          name: user.name,
+          action: ' has been destroyed.'
+        });
         User.publishDestroy(user.id);
       });
       res.redirect('/user');
